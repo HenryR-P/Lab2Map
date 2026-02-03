@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>#map { height: 725px; }</style>
+    
+</head>
+<body>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const map = L.map('map').setView([39.9526, -75.1652], 7);
+        //This constant is an L.map and the .setView portion of the code defines its default center and zoom 
+            //It appears in the Map section at the very begining of the Leaflet documentation
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+        var newYork = L.marker([40.7128, -74.0060]).addTo(map).bindPopup('New York City');
+        var philadelphia = L.marker([39.9526, -75.1652]).addTo(map).bindPopup('Philadelphia');
+        //These two variables are L.markers which appear in the Icon section under Basic types in the Leaflet documentation
+        //The comment on line 20 is supposed to be on line 6, but I could not get // to work there
+            //<style>#map { height: 725px; }</style>#map { height: 725px; }</style> is not present in the main Leaflet documentation, 
+                //but it does appear in the Quick Start Guide. It is used to set the size of the map's container
+    </script>
+</body>
+</html>
